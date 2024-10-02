@@ -4,6 +4,7 @@ vim.call("plug#begin")
 
 Plug('navarasu/onedark.nvim')
 Plug('Mofiqul/vscode.nvim')
+Plug('bluz71/vim-moonfly-colors', {['as'] = 'moonfly'})
 
 Plug("nvim-neo-tree/neo-tree.nvim")
 Plug("MunifTanjim/nui.nvim")
@@ -36,7 +37,9 @@ Plug('xiyaowong/transparent.nvim')
 
 Plug('dgagn/diagflow.nvim')
 
+Plug('ziglang/zig.vim')
 
+Plug('numToStr/Comment.nvim')
 
 
 vim.call("plug#end")

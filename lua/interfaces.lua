@@ -3,7 +3,7 @@ vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 vim.opt.termguicolors = true
 
-local colorscheme = "onedark"
+local colorscheme = "moonfly"
 vim.cmd("colorscheme " .. colorscheme)
 
 require("nvim-autopairs").setup({})
@@ -50,8 +50,8 @@ require("neo-tree").setup({
    enable_git_status = true,
    enable_diagnostics = true,
    open_files_do_not_replace_types = { "terminal", "trouble", "qf" }, -- when opening files, do not use windows containing these filetypes or buftypes
-   sort_case_insensitive = false,                                   -- used when sorting files and directories in the tree
-   sort_function = nil,                                             -- use a custom function for sorting files and directories in the tree
+   sort_case_insensitive = false,                                     -- used when sorting files and directories in the tree
+   sort_function = nil,                                               -- use a custom function for sorting files and directories in the tree
    -- sort_function = function (a,b)
    --       if a.type == b.type then
    --           return a.path > b.path
@@ -225,11 +225,11 @@ require("neo-tree").setup({
          },
       },
       follow_current_file = {
-         enabled = true,                  -- This will find and focus the file in the active buffer every time
+         enabled = true,                      -- This will find and focus the file in the active buffer every time
          --               -- the current file is changed while the tree is open.
-         leave_dirs_open = false,         -- `false` closes auto expanded dirs, such as with `:Neotree reveal`
+         leave_dirs_open = false,             -- `false` closes auto expanded dirs, such as with `:Neotree reveal`
       },
-      group_empty_dirs = false,           -- when true, empty folders will be grouped together
+      group_empty_dirs = false,               -- when true, empty folders will be grouped together
       hijack_netrw_behavior = "open_default", -- netrw disabled, opening a directory opens neo-tree
       -- in whatever position is specified in window.position
       -- "open_current",  -- netrw disabled, opening a directory opens within the
@@ -273,11 +273,11 @@ require("neo-tree").setup({
    },
    buffers = {
       follow_current_file = {
-         enabled = true,    -- This will find and focus the file in the active buffer every time
+         enabled = true,          -- This will find and focus the file in the active buffer every time
          --              -- the current file is changed while the tree is open.
          leave_dirs_open = false, -- `false` closes auto expanded dirs, such as with `:Neotree reveal`
       },
-      group_empty_dirs = true, -- when true, empty folders will be grouped together
+      group_empty_dirs = true,    -- when true, empty folders will be grouped together
       show_unloaded = true,
       window = {
          mappings = {
@@ -323,10 +323,9 @@ require("transparent").clear_prefix("lualine")
 require("transparent").clear_prefix("NeoTree")
 
 require('diagflow').setup({
-   enable = true,
-   max_width = 60,      -- The maximum width of the diagnostic messages
-   max_height = 10,     -- the maximum height per diagnostics
-   severity_colors = {  -- The highlight groups to use for each diagnostic severity level
+   enable = true, max_width = 60,     -- The maximum width of the diagnostic messages
+   max_height = 10,    -- the maximum height per diagnostics
+   severity_colors = { -- The highlight groups to use for each diagnostic severity level
       error = "DiagnosticFloatingError",
       warning = "DiagnosticFloatingWarn",
       info = "DiagnosticFloatingInfo",
@@ -336,15 +335,15 @@ require('diagflow').setup({
       return diagnostic.message
    end,
    gap_size = 1,
-   scope = 'cursor',  -- 'cursor', 'line' this changes the scope, so instead of showing errors under the cursor, it shows errors on the entire line.
+   scope = 'cursor', -- 'cursor', 'line' this changes the scope, so instead of showing errors under the cursor, it shows errors on the entire line.
    padding_top = 0,
    padding_right = 0,
-   text_align = 'right',                                   -- 'left', 'right'
-   placement = 'top',                                      -- 'top', 'inline'
-   inline_padding_left = 0,                                -- the padding left when the placement is inline
-   update_event = { 'DiagnosticChanged', 'BufReadPost' },  -- the event that updates the diagnostics cache
-   toggle_event = {},                                      -- if InsertEnter, can toggle the diagnostics on inserts
-   show_sign = false,                                      -- set to true if you want to render the diagnostic sign before the diagnostic message
+   text_align = 'right',                                  -- 'left', 'right'
+   placement = 'top',                                     -- 'top', 'inline'
+   inline_padding_left = 0,                               -- the padding left when the placement is inline
+   update_event = { 'DiagnosticChanged', 'BufReadPost' }, -- the event that updates the diagnostics cache
+   toggle_event = {},                                     -- if InsertEnter, can toggle the diagnostics on inserts
+   show_sign = false,                                     -- set to true if you want to render the diagnostic sign before the diagnostic message
    render_event = { 'DiagnosticChanged', 'CursorMoved' },
    border_chars = {
       top_left = "┌",
